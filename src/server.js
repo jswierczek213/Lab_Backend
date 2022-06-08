@@ -17,3 +17,6 @@ app.listen(
 // API Endpoints
 import groups from './api/groups/groups.js';
 app.use('/groups', groups);
+
+import users from './api/users/users.js';
+app.use('/users', users);

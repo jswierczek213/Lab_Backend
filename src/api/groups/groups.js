@@ -34,7 +34,7 @@ router.get('/all', async (req, res) => {
   }
 });
 
-router.get('/:groupId', async (req, res) => {
+router.get('/by-id/:groupId', async (req, res) => {
   try {
     const groupId = req.params.groupId;
 
@@ -71,6 +71,23 @@ router.post('/add-group', async (req, res) => {
     }
 
   } catch (e) {
+    res.status(500).send(e.toString());
+  }
+});
+
+router.patch('/change-name', async (req, res) => {
+  try {
+    const groupId = req.query.groupId;
+    const groupName = req.query.groupName;
+
+    const changeNameQuery = `update dbo.groups set group_name = '${groupName}' where id_group = ${groupId}`;
+
+    const connectionPool = await sql.connect(sqlConfig);
+    await connectionPool.query(changeNameQuery);
+    await connectionPool.close();
+
+    res.status(200).send('Group name has been changed');
+  } catch(e) {
     res.status(500).send(e.toString());
   }
 });
