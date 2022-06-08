@@ -13,7 +13,7 @@ app.listen(
   () => console.log(`Server running on port ${process.env.SERVER_PORT}`)
 );
 
-import groups from './api/groups/groups.js';
 
 // API Endpoints
+import groups from './api/groups/groups.js';
 app.use('/groups', groups);
