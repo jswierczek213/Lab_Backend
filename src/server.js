@@ -13,10 +13,15 @@ app.listen(
   () => console.log(`Server running on port ${process.env.SERVER_PORT}`)
 );
 
-
 // API Endpoints
 import groups from './api/groups/groups.js';
 app.use('/groups', groups);
 
 import users from './api/users/users.js';
 app.use('/users', users);
+
+import posts from './api/posts/posts.js';
+app.use('/posts', posts);
+
+import categories from './api/categories/categories.js';
+app.use('/categories', categories);
