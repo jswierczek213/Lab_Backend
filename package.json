@@ -22,5 +22,8 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mssql": "^8.1.2"
+  },
+  "devDependencies": {
+    "docker-machine": "^3.0.1"
   }
 }
