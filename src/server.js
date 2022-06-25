@@ -27,4 +27,5 @@ import categories from './api/categories/categories.js';
 app.use('/categories', categories);
 
 // API RABBITMQ Endpoints
-app.get('')
+import rabbitmq from './rabbitmq/publisher.js';
+app.use('/rabbitmq', rabbitmq);
