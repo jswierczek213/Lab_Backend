@@ -25,3 +25,6 @@ app.use('/posts', posts);
 
 import categories from './api/categories/categories.js';
 app.use('/categories', categories);
+
+// API RABBITMQ Endpoints
+app.get('')
